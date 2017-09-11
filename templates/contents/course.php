@@ -1,6 +1,6 @@
 <div class="course">
     <span class="sale">20%</span>
-    <a href="#" class="thumbnail"><img src="img/course-1.png" alt="Course"></a>
+    <a href="#" class="thumbnail hover-zoom"><img src="img/course-1.png" alt="Course"></a>
     <a href="#" class="title"><strong>Bí quyết nuôi dạy con hạnh phúc và thành công</strong></a>
     <div class="clearfix duration-lessons">
         <span class="pull-left duration"><i class="fa fa-play-circle"></i> 25 bài học</span>

@@ -23,6 +23,19 @@ img {
     .ellipsis;
 }
 
+.hover-zoom {
+    overflow: hidden;
+    display: block;
+    > img {
+        .transition(transform .3s);
+    }
+    &:hover {
+        > img {
+            .scale(1.1, 1.1);
+        }
+    }
+}
+
 @media (max-width: 767px) {
     .row {
         margin-left: -6px; margin-right: -6px;
@@ -99,6 +112,7 @@ img {
                 z-index: 100;
                 margin: 0; padding: 0;
                 border-top: solid 5px @brand-third;
+                box-shadow: 1px 1px 8px -3px rgba(0, 0, 0, .5);
                 li {
                     a {
                         display: block;
@@ -113,6 +127,11 @@ img {
                             i {
                                 margin-right: 8px;
                             }
+                        }
+                    }
+                    &:last-child {
+                        a {
+                            border-bottom: none;
                         }
                     }
                 }
@@ -192,19 +211,18 @@ img {
                 width: 300px;
                 background: #fff;
                 padding: 10px 12px;
-                border: 1px solid #ddd;
                 border-radius: 2px;
                 z-index: 100;
                 margin-top: 15px;
                 text-align: left;
-                box-shadow: 1px 1px 12px -3px rgba(0, 0, 0, 0.4);
+                box-shadow: 1px 1px 10px -3px rgba(0,0,0,.5);
                 > .arrow {
                     position: absolute;
                     top: -11px; left: 50%; margin-left: -11px;
                     width: 0; height: 0;
                     border: solid 11px transparent;
                     border-top-width: 0px;
-                    border-bottom-color: #ccc;
+                    border-bottom-color: #ddd;
                     &:after {
                         position: absolute;
                         display: block;
@@ -481,15 +499,7 @@ img {
         z-index: 1;
     }
     .thumbnail {
-        display: block;
         margin-bottom: 10px;
-        overflow: hidden;
-        img {
-            .transition(transform .3s);
-            &:hover {
-                .scale(1.05, 1.05);
-            }
-        }
     }
     .title {
         display: block;
@@ -1078,7 +1088,7 @@ img {
 }
 
 /********* cart - checkout ********/
-#main-cart {
+.main-cart-checkout {
     padding: 50px 0;
     background: #f3f3f3;
     .main-title {
@@ -1145,6 +1155,13 @@ img {
                     color: @brand-four;
                 }
             }
+            &.coupon-total {
+                color: #888;
+                font-size: 14px;
+                .delete-coupon {
+                    text-decoration: underline;
+                }
+            }
         }
         .coupon-form {
             form {
@@ -1153,10 +1170,85 @@ img {
                 }
             }
         }
+        .coupon-alert {
+            margin: 15px 0 0;
+            padding: 5px 30px 5px 10px;
+        }
     }
     .checkout-btn {
         padding: 7px 18px;
         margin-top: 20px;
+    }
+}
+
+.checkout-form {
+    .row {
+        > div {
+            margin-bottom: 10px;
+        }
+    }
+    label {
+        font-weight: normal;
+    }
+}
+
+/********* post category *******/
+.main-category {
+    padding: 15px 0 50px;
+    background: #f3f3f3;
+    #content {
+        background: #fff;
+        padding: 20px;
+    }
+    h1.page-title {
+        margin: 0 0 15px;
+        font-size: 22px;
+    }
+    .article {
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: dotted 1px #ddd;
+        .post-thumbnail {
+            margin-right: 15px;
+            max-width: 200px;
+        }
+        .entry-title {
+            margin: 5px 0 10px 0;
+            font-size: 17px;
+        }
+        .entry-meta {
+            color: #999;
+            font-size: 13px;
+        }
+        .post-excerpt {
+            color: #666;
+            text-align: justify;
+        }
+    }
+}
+
+.main-single {
+    padding: 24px 0 50px;
+    background: #f3f3f3;
+    #content {
+        background: #fff;
+        padding: 20px;
+    }
+    h1.entry-title {
+        margin: 0 0 10px;
+        font-size: 22px;
+        border-bottom: solid 1px #eee;
+        padding-bottom: 10px;
+    }
+    .entry-meta {
+        color: #999;
+        font-size: 13px;
+        margin-bottom: 30px;
+    }
+    .post-content {
+        font-size: 15px;
+        text-align: justify;
+        line-height: 1.7em;
     }
 }
 
