@@ -4,8 +4,8 @@ jQuery(document).ready(function($) {
 
     // video frame
     $('.video-iframe').css('height', parseInt($(this).width() * 9/16));
-    $('.video-iframe').resize(function() {
-        $(this).css('height', parseInt($(this).width() * 9/16));
+    $(window).resize(function() {
+        $('.video-iframe').css('height', parseInt($(this).width() * 9/16));
     });
 
     // course categories menu
